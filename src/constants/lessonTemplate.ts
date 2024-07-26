@@ -77,8 +77,8 @@ const lessonTemplate = {
       author: 'Vineet Kumar',
       lessonMedications: [
         {
-          expirationDateUtc: '2023-12-07T05:00:00.000Z',
-          name: 'Dopamine',
+          expirationDateUtc: '',
+          name: '',
           concentration: '',
           concentrationUnits: '',
           doseUnits: '1',
@@ -86,8 +86,8 @@ const lessonTemplate = {
         },
         {
           dose: 1,
-          expirationDateUtc: '2023-12-08T05:00:00.000Z',
-          name: 'Morphine',
+          expirationDateUtc: '',
+          name: '',
           concentration: '',
           concentrationUnits: '',
           doseUnits: '1',
@@ -95,8 +95,8 @@ const lessonTemplate = {
         },
         {
           dose: 1,
-          expirationDateUtc: '2023-12-09T05:00:00.000Z',
-          name: 'Epinephrine',
+          expirationDateUtc: '',
+          name: '',
           concentration: '',
           concentrationUnits: '',
           doseUnits: '1',
@@ -109,8 +109,8 @@ const lessonTemplate = {
       lessonPatients: [
         {
           patient: {
-            name: 'Robin',
-            sex: 'female',
+            name: '',
+            sex: '',
             dateOfBirthUtc: '',
             heightInCm: '',
             weightInKg: 78,
@@ -127,13 +127,13 @@ const lessonTemplate = {
           bedHeight: '',
           eyeOpennessLeft: '',
           eyeOpennessRight: '',
-          dateOfBirthUtc: '1994-04-01T00:00:00.000Z',
+          dateOfBirthUtc: '',
         },
       ],
     },
   ],
 };
 
-const PROMPT_INTRO = `${lessonTemplate}
-  Using the object above as template , create a new JSON with the following details using realistic data: `;
+const PROMPT_INTRO = `${JSON.stringify(lessonTemplate.lesson)}
+Using this JSON as template , fill the JSON template with realistic data of this case: `;
 export { PROMPT_INTRO };

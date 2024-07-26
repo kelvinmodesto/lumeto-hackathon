@@ -25,7 +25,7 @@ const useChatGPT = (prompt: string): UseChatGPTResponse => {
           },
           {
             headers: {
-              Authorization: `Bearer sk-hackathon-general-IJhiR9WxtduhFYPcSjFkT3BlbkFJPzGpfkpF0DZkqx1FCQOS`,
+              Authorization: `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
               'Content-Type': 'application/json',
             },
           },
