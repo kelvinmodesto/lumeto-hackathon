@@ -11,14 +11,14 @@ const App: FC = () => {
   const onSubmit = (text: string) => {
     if (!text) return;
     setPrompt(`${PROMPT_INTRO}: ${text}`);
-    console.log(response);
   };
+  console.log(response);
   return (
     <>
       <Chat onSubmit={onSubmit} />
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error.toString()}</p>}
-      {response && <p>{response}</p>}
+      {response && <code>{response}</code>}
     </>
   );
 };

@@ -18,19 +18,19 @@ const useChatGPT = (prompt: string): UseChatGPTResponse => {
       setLoading(true);
       try {
         const { data } = await axios.post(
-          'https://api.openai.com/v1/engines/davinci-codex/completions',
+          'https://api.openai.com/v1/chat/completions',
           {
-            prompt,
-            max_tokens: 100,
+            model: 'gpt-4o',
+            messages: [{ role: 'user', content: prompt }],
           },
           {
             headers: {
-              Authorization: `Bearer ${import.meta.env.REACT_APP_OPENAI_API_KEY}`,
+              Authorization: `Bearer sk-hackathon-general-IJhiR9WxtduhFYPcSjFkT3BlbkFJPzGpfkpF0DZkqx1FCQOS`,
               'Content-Type': 'application/json',
             },
           },
         );
-        setResponse(data.choices[0].text);
+        setResponse(data.choices[0].message.content);
         setLoading(false);
       } catch (error) {
         setError(error as Error);
