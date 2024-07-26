@@ -134,4 +134,6 @@ const lessonTemplate = {
   ],
 };
 
-export { lessonTemplate };
+const PROMPT_INTRO = `${lessonTemplate}
+  Using the object above as template , create a new JSON with the following details using realistic data: `;
+export { PROMPT_INTRO };
