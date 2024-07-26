@@ -21,6 +21,7 @@ export const Chat: FC<Props> = ({ onSubmit }) => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
+    console.log(formData.get('prompt') as string);
     onSubmit(formData.get('prompt') as string);
   };
   return (

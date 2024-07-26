@@ -9,7 +9,7 @@ const App: FC = () => {
   const [prompt, setPrompt] = useState('');
   const { response, error, loading } = useChatGPT(prompt);
   const onSubmit = (text: string) => {
-    if (!prompt) return;
+    if (!text) return;
     setPrompt(`${PROMPT_INTRO}: ${text}`);
     console.log(response);
   };
